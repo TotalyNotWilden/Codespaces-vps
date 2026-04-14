@@ -1,20 +1,17 @@
 
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
     xfce4 \
     xfce4-goodies \
-    tightvncserver \
-    xterm \
+    firefox \
     sudo \
     curl \
     git \
-    && apt-get clean
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 
 RUN useradd -m -s /bin/bash codespace && \
-    echo "codespace:password" | chpasswd && \
-    usermod -aG sudo codespace
-
-EXPOSE 5901
+    echo "codespace ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
