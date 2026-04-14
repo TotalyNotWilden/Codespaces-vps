@@ -9,5 +9,6 @@
     "vscode": {
       "extensions": ["ms-vscode-remote.remote-containers"]
     }
-  }
+  },
+  "postStartCommand": "vncserver :1 -geometry 1280x800 -depth 24"
 }
