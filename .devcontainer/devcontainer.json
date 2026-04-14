@@ -1,0 +1,13 @@
+{
+  "name": "Ubuntu XFCE Desktop",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "codespace",
+  "forwardPorts": [5901],
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode-remote.remote-containers"]
+    }
+  }
+}
